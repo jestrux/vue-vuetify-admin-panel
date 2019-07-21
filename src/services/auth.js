@@ -1,4 +1,4 @@
-const USER_KEY = 'FINLINK_ADMIN_USER';
+const USER_KEY = 'AN_ADMIN_USER';
 import store from '../store'
 export const saveUser = (user) =>
   Promise.resolve().then(() => localStorage.setItem(USER_KEY, JSON.stringify(user)))

@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <AppHeader fixed />
+    <AppHeader @logout="logout" />
 
     <div class="app-body">
       <SideBar />
@@ -16,7 +16,7 @@
 
 import AppHeader from './components/AppHeader';
 import SideBar from './components/SideBar';
-// import { removeUser } from '../services/auth';
+import { removeUser } from '../services/auth';
 
 export default {
   name: 'MainContainer',
@@ -39,9 +39,9 @@ export default {
   },
   methods: {
     async logout(){
-      // await removeUser();
-      // this.$store.dispatch('setAuthUser', null);
-      // this.$router.replace('/login');
+      await removeUser();
+      this.$store.dispatch('setAuthUser', null);
+      this.$router.replace('/login');
     }
   }
 }

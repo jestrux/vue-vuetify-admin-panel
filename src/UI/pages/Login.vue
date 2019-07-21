@@ -77,6 +77,7 @@
           this.password = "";
 
           this.$store.dispatch('setAuthUser', user);
+          this.$router.replace('/');
           saveUser(user);
         } catch (error) {
           this.authenticating = false;
